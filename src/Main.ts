@@ -27,6 +27,13 @@
 //
 //////////////////////////////////////////////////////////////////////////////////////
 
+
+
+
+
+
+
+
 class Main extends egret.DisplayObjectContainer {
 
     /**
@@ -119,12 +126,24 @@ class Main extends egret.DisplayObjectContainer {
     private createGameScene(): void {
 
         var user = new User();
-        console.log(user);
+        user.heroes.push(hero_1);
+
+        var hero_1 = new Hero("hero_1", true);
+        var hero_2 = new Hero("hero_2", true);
+        var equipment_1 = new Equipment("equipment_1", 10);
+        var equipment_2 = new Equipment("equipment_2", 20);
+        var equipment_3 = new Equipment("equipment_3", 30);
+
+        hero_1.equipments.push(equipment_2);
+        hero_2.equipments.push(equipment_1, equipment_3);
+
+        var jewel_1 = new Jewel("jewel_1", 10);
+        var jewel_2 = new Jewel("jewel_2", 20);
+        equipment_1.jewels.push(jewel_2);
+        equipment_2.jewels.push(jewel_1);
 
 
-
-
-
+        console.log(user.getFightPower());
 
     }
 
